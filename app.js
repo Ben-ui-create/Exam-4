@@ -13,7 +13,7 @@ import sessionMiddleware from './config/session.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-//import routes from ./routes/index.js
+import routes from './routes/index.js';
 
 const app = express();
 
@@ -29,7 +29,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser(COOKIE_SECRET));
 
-//app.use(routes);
+app.use(routes);
 
 app.use(errorHandler.notFound);
 app.use(errorHandler.errors);

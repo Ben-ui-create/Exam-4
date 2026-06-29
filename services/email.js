@@ -19,7 +19,7 @@ export default async function ({ to, subject, template, data, attachments = null
     const html = await ejs.renderFile(filePath, { data });
 
     const payload = {
-      from: '"Chat" <beniksargsyan349@gmail.com>',
+      from: '"Instagram Clone" <beniksargsyan349@gmail.com>',
       to,
       subject,
       html,

@@ -3,7 +3,6 @@ import db from '../clients/db.sequelize.js';
 
 import Users from './Users.js';
 import Comments from './Comments.js';
-import Likes from './Likes.js';
 
 class Posts extends Model {
 

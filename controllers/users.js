@@ -126,7 +126,7 @@ export default {
       } else {
         await user.update({
           status: 'active',
-          activationToken: null;
+          activationToken: null,
         });
       }
 

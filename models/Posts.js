@@ -2,6 +2,8 @@ import {DataTypes, Model} from 'sequelize';
 import db from '../clients/db.sequelize.js';
 
 import Users from './Users.js';
+import Comments from './Comments.js';
+import Likes from './Likes.js';
 
 class Posts extends Model {
 
@@ -40,6 +42,27 @@ Users.hasMany(Posts, {
 Posts.belongsTo(Users, {
   foreignKey: 'userId',
   as: 'posts',
+});
+
+Posts.hasMany(Comments, {
+  foreignKey: 'postId',
+  as: 'comments',
+});
+
+Comments.belongsTo(Posts, {
+  foreignKey: 'postId',
+});
+
+Users.belongsToMany(Posts, {
+  through: 'likes',
+  foreignKey: 'userId',
+  as: 'likedPosts',
+});
+
+Posts.belongsToMany(Users, {
+  through: 'likes',
+  foreignKey: 'postId',
+  as: 'likedBy',
 });
 
 export default Posts;

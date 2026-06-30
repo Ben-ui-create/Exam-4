@@ -39,3 +39,5 @@ export default class Socket {
     this.io.to(room).emit(type, message);
   }
 }
+
+export default Socket;

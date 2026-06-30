@@ -5,6 +5,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import {fileURLToPath} from 'url';
 import path from 'path';
+import Socket from './services/Socket.js';
 
 import './migrate.js';
 
@@ -35,6 +36,8 @@ app.use(errorHandler.notFound);
 app.use(errorHandler.errors);
 
 const server = createServer(app);
+
+Socket.init(server, sessionMiddleware);
 
 server.listen(PORT, () => {
   console.log('Listening on port ', PORT);

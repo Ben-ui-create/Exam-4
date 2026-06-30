@@ -18,7 +18,7 @@
             display:flex;
             justify-content:center;
             align-items:center;
-            height:100vh;
+            min-height:100vh;
         }
 
         .container{
@@ -34,54 +34,48 @@
 
         h1{
             font-size:42px;
-            margin-bottom:20px;
+            margin-bottom:15px;
             font-family:cursive;
         }
 
-        p{
+        .subtitle{
             color:#8e8e8e;
             font-size:14px;
+            margin-bottom:30px;
             line-height:1.5;
-            margin-bottom:25px;
-        }
-
-        .error{
-            color:#ed4956;
-            font-size:14px;
-            margin-bottom:15px;
         }
 
         .code{
             display:flex;
             justify-content:space-between;
             gap:8px;
-            margin-bottom:20px;
+            margin-bottom:25px;
         }
 
-        .code input{
+        .digit{
             width:45px;
             height:50px;
             border:1px solid #dbdbdb;
-            background:#fafafa;
             border-radius:4px;
+            background:#fafafa;
             text-align:center;
             font-size:22px;
             outline:none;
         }
 
-        .code input:focus{
+        .digit:focus{
             border-color:#0095f6;
         }
 
         button{
             width:100%;
             padding:10px;
-            background:#0095f6;
-            color:#fff;
             border:none;
             border-radius:8px;
-            cursor:pointer;
+            background:#0095f6;
+            color:#fff;
             font-weight:bold;
+            cursor:pointer;
         }
 
         button:hover{
@@ -111,31 +105,32 @@
 
         <h1>Instagram</h1>
 
-        <p>
+        <p class="subtitle">
             Enter the 6-digit verification code sent to your email.
         </p>
-
-        <% if (typeof error !== 'undefined') { %>
-            <div class="error">
-                <%= error %>
-            </div>
-        <% } %>
 
         <form id="activateForm">
 
             <div class="code">
+
                 <input type="text" maxlength="1" class="digit">
+
                 <input type="text" maxlength="1" class="digit">
+
                 <input type="text" maxlength="1" class="digit">
+
                 <input type="text" maxlength="1" class="digit">
+
                 <input type="text" maxlength="1" class="digit">
+
                 <input type="text" maxlength="1" class="digit">
+
             </div>
 
             <input
                     type="hidden"
-                    name="activationToken"
                     id="activationToken"
+                    name="activationToken"
             >
 
             <button type="submit">
@@ -147,8 +142,8 @@
     </div>
 
     <div class="footer">
-        Back to
-        <a href="/login">
+        Already have an account?
+        <a href="/users/login">
             Log in
         </a>
     </div>

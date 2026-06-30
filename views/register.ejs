@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram • Register</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#fafafa;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .container{
+            width:360px;
+        }
+
+        .card{
+            background:#fff;
+            border:1px solid #dbdbdb;
+            padding:35px 40px;
+            text-align:center;
+        }
+
+        h1{
+            font-size:42px;
+            margin-bottom:15px;
+            font-family:cursive;
+        }
+
+        p{
+            color:#8e8e8e;
+            margin-bottom:25px;
+            font-size:14px;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin-bottom:8px;
+            border:1px solid #dbdbdb;
+            background:#fafafa;
+            border-radius:4px;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background:#0095f6;
+            color:#fff;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-weight:bold;
+            margin-top:10px;
+        }
+
+        .footer{
+            margin-top:12px;
+            background:#fff;
+            border:1px solid #dbdbdb;
+            padding:20px;
+            text-align:center;
+        }
+
+        a{
+            color:#0095f6;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Instagram</h1>
+
+        <p>Sign up to see photos and videos from your friends.</p>
+
+        <form action="/users/register" method="POST">
+
+            <input
+                    type="text"
+                    name="name"
+                    placeholder="Full Name"
+                    required
+            >
+
+            <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    required
+            >
+
+            <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    required
+            >
+
+            <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required
+            >
+
+            <button type="submit">
+                Sign up
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="footer">
+        Have an account?
+        <a href="/login">
+            Log in
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

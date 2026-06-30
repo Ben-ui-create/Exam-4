@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram • Verify Email</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#fafafa;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:360px;
+        }
+
+        .card{
+            background:#fff;
+            border:1px solid #dbdbdb;
+            padding:40px;
+            text-align:center;
+        }
+
+        h1{
+            font-size:42px;
+            margin-bottom:20px;
+            font-family:cursive;
+        }
+
+        p{
+            color:#8e8e8e;
+            font-size:14px;
+            line-height:1.5;
+            margin-bottom:25px;
+        }
+
+        .error{
+            color:#ed4956;
+            font-size:14px;
+            margin-bottom:15px;
+        }
+
+        .code{
+            display:flex;
+            justify-content:space-between;
+            gap:8px;
+            margin-bottom:20px;
+        }
+
+        .code input{
+            width:45px;
+            height:50px;
+            border:1px solid #dbdbdb;
+            background:#fafafa;
+            border-radius:4px;
+            text-align:center;
+            font-size:22px;
+            outline:none;
+        }
+
+        .code input:focus{
+            border-color:#0095f6;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background:#0095f6;
+            color:#fff;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-weight:bold;
+        }
+
+        button:hover{
+            background:#1877f2;
+        }
+
+        .footer{
+            margin-top:12px;
+            background:#fff;
+            border:1px solid #dbdbdb;
+            padding:20px;
+            text-align:center;
+        }
+
+        a{
+            color:#0095f6;
+            text-decoration:none;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Instagram</h1>
+
+        <p>
+            Enter the 6-digit verification code sent to your email.
+        </p>
+
+        <% if (typeof error !== 'undefined') { %>
+            <div class="error">
+                <%= error %>
+            </div>
+        <% } %>
+
+        <form id="activateForm">
+
+            <div class="code">
+                <input type="text" maxlength="1" class="digit">
+                <input type="text" maxlength="1" class="digit">
+                <input type="text" maxlength="1" class="digit">
+                <input type="text" maxlength="1" class="digit">
+                <input type="text" maxlength="1" class="digit">
+                <input type="text" maxlength="1" class="digit">
+            </div>
+
+            <input
+                    type="hidden"
+                    name="activationToken"
+                    id="activationToken"
+            >
+
+            <button type="submit">
+                Verify Account
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="footer">
+        Back to
+        <a href="/login">
+            Log in
+        </a>
+    </div>
+
+</div>
+
+<script src="/js/activate.js"></script>
+
+</body>
+</html>

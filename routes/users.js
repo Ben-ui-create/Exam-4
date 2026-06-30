@@ -42,4 +42,8 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/activateEmail', (req, res) => {
+  res.render('activateEmail');
+});
+
 export default router;

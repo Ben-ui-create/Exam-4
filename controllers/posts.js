@@ -15,7 +15,6 @@ export default {
       const post = await Posts.create({
         image: `/media/${req.file.filename}`,
         caption: req.body.caption,
-        userId: req.session.user.id,
       });
 
       res.status(200).json({

@@ -22,7 +22,6 @@ Posts.init({
 
     caption: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
   },
   {
